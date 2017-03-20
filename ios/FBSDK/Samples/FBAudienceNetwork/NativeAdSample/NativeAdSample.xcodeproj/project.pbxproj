@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58D92D5C18C7A6B10090E7E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D92D5A18C7A6B10090E7E2 /* AppDelegate.m */; };
+		58D92D5D18C7A6B10090E7E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58D92D5B18C7A6B10090E7E2 /* Images.xcassets */; };
+		58D92D6418C7A6BC0090E7E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D92D6118C7A6BC0090E7E2 /* ViewController.m */; };
+		58D92D6518C7A6BC0090E7E2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D92D6218C7A6BC0090E7E2 /* ViewController.xib */; };
+		58D92D6C18C7A6D00090E7E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D92D6818C7A6D00090E7E2 /* main.m */; };
+		7DB6D5831D2EF6020095B2E3 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB6D5811D2EF6020095B2E3 /* CollectionViewController.m */; };
+		7DB6D5841D2EF6020095B2E3 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6D5821D2EF6020095B2E3 /* CollectionViewController.xib */; };
+		904B82591CC96D8200680A5F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 904B82571CC96D8200680A5F /* SettingsViewController.m */; };
+		904B825A1CC96D8200680A5F /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 904B82581CC96D8200680A5F /* SettingsViewController.xib */; };
+		908D9F551A2E4E2900A1438B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 908D9F541A2E4E2900A1438B /* LaunchScreen.xib */; };
+		90E89CD41A99AE95005D3430 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90E89CD21A99AE95005D3430 /* ScrollViewController.m */; };
+		90E89CD51A99AE95005D3430 /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90E89CD31A99AE95005D3430 /* ScrollViewController.xib */; };
+		99EE67C21DE3143200ADFF28 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EE67BE1DE3143200ADFF28 /* FBAudienceNetwork.framework */; };
+		EE23E6E8198B0B0600215C81 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE23E6E6198B0B0600215C81 /* TableViewController.m */; };
+		EE23E6E9198B0B0600215C81 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE23E6E7198B0B0600215C81 /* TableViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B87B1D2D1DDE5CA6004828BC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		58D92D1E18C7A6100090E7E2 /* NativeAdSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAdSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D92D5918C7A6B10090E7E2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58D92D5A18C7A6B10090E7E2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58D92D5B18C7A6B10090E7E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		58D92D6018C7A6BC0090E7E2 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		58D92D6118C7A6BC0090E7E2 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58D92D6218C7A6BC0090E7E2 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		58D92D6618C7A6D00090E7E2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58D92D6718C7A6D00090E7E2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		58D92D6818C7A6D00090E7E2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58D92D6918C7A6D00090E7E2 /* NativeAdSample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NativeAdSample-Prefix.pch"; sourceTree = "<group>"; };
+		7DB6D5801D2EF6020095B2E3 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		7DB6D5811D2EF6020095B2E3 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		7DB6D5821D2EF6020095B2E3 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		904B82561CC96D8200680A5F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		904B82571CC96D8200680A5F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		904B82581CC96D8200680A5F /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		908D9F541A2E4E2900A1438B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		90E89CD11A99AE95005D3430 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		90E89CD21A99AE95005D3430 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		90E89CD31A99AE95005D3430 /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		99EE67BE1DE3143200ADFF28 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B81CBE1E1DC7F21400651A52 /* NativeAdSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NativeAdSample.entitlements; sourceTree = "<group>"; };
+		EE23E6E5198B0B0600215C81 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		EE23E6E6198B0B0600215C81 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		EE23E6E7198B0B0600215C81 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58D92D1B18C7A6100090E7E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EE67C21DE3143200ADFF28 /* FBAudienceNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58D92D1518C7A6100090E7E2 = {
+			isa = PBXGroup;
+			children = (
+				58D92D2718C7A6100090E7E2 /* NativeAdSample */,
+				58D92D2018C7A6100090E7E2 /* Frameworks */,
+				58D92D1F18C7A6100090E7E2 /* Products */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		58D92D1F18C7A6100090E7E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58D92D1E18C7A6100090E7E2 /* NativeAdSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58D92D2018C7A6100090E7E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99EE67BE1DE3143200ADFF28 /* FBAudienceNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58D92D2718C7A6100090E7E2 /* NativeAdSample */ = {
+			isa = PBXGroup;
+			children = (
+				B81CBE1E1DC7F21400651A52 /* NativeAdSample.entitlements */,
+				EE23E6E5198B0B0600215C81 /* TableViewController.h */,
+				EE23E6E6198B0B0600215C81 /* TableViewController.m */,
+				EE23E6E7198B0B0600215C81 /* TableViewController.xib */,
+				90E89CD11A99AE95005D3430 /* ScrollViewController.h */,
+				90E89CD21A99AE95005D3430 /* ScrollViewController.m */,
+				90E89CD31A99AE95005D3430 /* ScrollViewController.xib */,
+				58D92D6018C7A6BC0090E7E2 /* ViewController.h */,
+				58D92D6118C7A6BC0090E7E2 /* ViewController.m */,
+				58D92D6218C7A6BC0090E7E2 /* ViewController.xib */,
+				904B82561CC96D8200680A5F /* SettingsViewController.h */,
+				904B82571CC96D8200680A5F /* SettingsViewController.m */,
+				904B82581CC96D8200680A5F /* SettingsViewController.xib */,
+				58D92D5918C7A6B10090E7E2 /* AppDelegate.h */,
+				58D92D5A18C7A6B10090E7E2 /* AppDelegate.m */,
+				908D9F541A2E4E2900A1438B /* LaunchScreen.xib */,
+				58D92D5B18C7A6B10090E7E2 /* Images.xcassets */,
+				58D92D2818C7A6100090E7E2 /* Supporting Files */,
+				7DB6D5801D2EF6020095B2E3 /* CollectionViewController.h */,
+				7DB6D5811D2EF6020095B2E3 /* CollectionViewController.m */,
+				7DB6D5821D2EF6020095B2E3 /* CollectionViewController.xib */,
+			);
+			path = NativeAdSample;
+			sourceTree = "<group>";
+		};
+		58D92D2818C7A6100090E7E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58D92D6618C7A6D00090E7E2 /* Info.plist */,
+				58D92D6718C7A6D00090E7E2 /* InfoPlist.strings */,
+				58D92D6818C7A6D00090E7E2 /* main.m */,
+				58D92D6918C7A6D00090E7E2 /* NativeAdSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58D92D1D18C7A6100090E7E2 /* NativeAdSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58D92D5318C7A6110090E7E2 /* Build configuration list for PBXNativeTarget "NativeAdSample" */;
+			buildPhases = (
+				58D92D1A18C7A6100090E7E2 /* Sources */,
+				58D92D1C18C7A6100090E7E2 /* Resources */,
+				58D92D1B18C7A6100090E7E2 /* Frameworks */,
+				B87B1D2D1DDE5CA6004828BC /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NativeAdSample;
+			productName = NativeAdSample;
+			productReference = 58D92D1E18C7A6100090E7E2 /* NativeAdSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58D92D1618C7A6100090E7E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					58D92D1D18C7A6100090E7E2 = {
+						DevelopmentTeam = V9WTTPBFK9;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+						};
+					};
+				};
+			};
+			buildConfigurationList = 58D92D1918C7A6100090E7E2 /* Build configuration list for PBXProject "NativeAdSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58D92D1518C7A6100090E7E2;
+			productRefGroup = 58D92D1F18C7A6100090E7E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58D92D1D18C7A6100090E7E2 /* NativeAdSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58D92D1C18C7A6100090E7E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				908D9F551A2E4E2900A1438B /* LaunchScreen.xib in Resources */,
+				904B825A1CC96D8200680A5F /* SettingsViewController.xib in Resources */,
+				7DB6D5841D2EF6020095B2E3 /* CollectionViewController.xib in Resources */,
+				58D92D6518C7A6BC0090E7E2 /* ViewController.xib in Resources */,
+				58D92D5D18C7A6B10090E7E2 /* Images.xcassets in Resources */,
+				EE23E6E9198B0B0600215C81 /* TableViewController.xib in Resources */,
+				90E89CD51A99AE95005D3430 /* ScrollViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58D92D1A18C7A6100090E7E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58D92D5C18C7A6B10090E7E2 /* AppDelegate.m in Sources */,
+				7DB6D5831D2EF6020095B2E3 /* CollectionViewController.m in Sources */,
+				58D92D6C18C7A6D00090E7E2 /* main.m in Sources */,
+				90E89CD41A99AE95005D3430 /* ScrollViewController.m in Sources */,
+				904B82591CC96D8200680A5F /* SettingsViewController.m in Sources */,
+				EE23E6E8198B0B0600215C81 /* TableViewController.m in Sources */,
+				58D92D6418C7A6BC0090E7E2 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58D92D5118C7A6110090E7E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58D92D5218C7A6110090E7E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58D92D5418C7A6110090E7E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = NativeAdSample/NativeAdSample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = V9WTTPBFK9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../",
+					"$(SRCROOT)/",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NativeAdSample/NativeAdSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = NativeAdSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.audiencenetwork.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8d2650e7-a3c0-4b70-a158-1df747083300";
+				PROVISIONING_PROFILE_SPECIFIER = "Facebook Internal Generic";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		58D92D5518C7A6110090E7E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = NativeAdSample/NativeAdSample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 4W5TH4RKQ2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../../../",
+					"$(SRCROOT)/",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NativeAdSample/NativeAdSample-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = NativeAdSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.audiencenetwork.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e7603b38-718e-4f37-98d5-3a5668531043";
+				PROVISIONING_PROFILE_SPECIFIER = "SDK AN NativeAdSample Master Distribution";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58D92D1918C7A6100090E7E2 /* Build configuration list for PBXProject "NativeAdSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D92D5118C7A6110090E7E2 /* Debug */,
+				58D92D5218C7A6110090E7E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58D92D5318C7A6110090E7E2 /* Build configuration list for PBXNativeTarget "NativeAdSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58D92D5418C7A6110090E7E2 /* Debug */,
+				58D92D5518C7A6110090E7E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58D92D1618C7A6100090E7E2 /* Project object */;
+}

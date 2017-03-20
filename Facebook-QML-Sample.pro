@@ -28,3 +28,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+android {
+    QT += androidextras
+    SOURCES += android/FacebookQMLAndroid.cpp
+    HEADERS += android/FacebookQMLAndroid.h \
+        android/AndroidGlobals.h
+    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android/project
+    OTHER_FILES += android/project/AndroidManifest.xml
+}
+
+ios {
+    QMAKE_INFO_PLIST = ios/Project-Info.plist
+    OTHER_FILES += $$QMAKE_INFO_PLIST
+    OBJECTIVE_SOURCES += ios/FacebookQMLiOS.mm
+    HEADERS += ios/FacebookQMLiOS.h
+    LIBS += -F$$PWD/ios/FBSDK -framework FBSDKCoreKit -framework FBSDKShareKit -framework Foundation
+    LIBS += -framework Bolts -framework FBSDKLoginKit -framework CoreGraphics
+}
+
+DISTFILES += \
+    android/project/AndroidManifest.xml \
+    android/project/gradle/wrapper/gradle-wrapper.jar \
+    android/project/gradlew \
+    android/project/res/values/libs.xml \
+    android/project/build.gradle \
+    android/project/gradle/wrapper/gradle-wrapper.properties \
+    android/project/gradlew.bat \
+    android/project/src/me/mnafees/FacebookQMLSample/FacebookQMLHelperActivity.java
