@@ -1,8 +1,12 @@
 #include "FacebookQMLiOS.h"
 
+#include <QGuiApplication>
+#include <qpa/qplatformnativeinterface.h>
+
 #include <Foundation/Foundation.h>
 #include <UIKit/UIKit.h>
 #include <FBSDKCoreKit/FBSDKCoreKit.h>
+#include <FBSDKLoginKit/FBSDKLoginKit.h>
 #include <FBSDKShareKit/FBSDKShareKit.h>
 
 static FacebookQMLiOS* m_instance{nullptr};
@@ -10,10 +14,10 @@ static FacebookQMLiOS* m_instance{nullptr};
 @interface QIOSApplicationDelegate
 @end
 
-@interface QIOSApplicationDelegate (FacebookQMLiOS)
+@interface QIOSApplicationDelegate (FacebookQMLiOSDelegate)
 @end
 
-@implementation QIOSApplicationDelegate (FacebookQMLiOS)
+@implementation QIOSApplicationDelegate (FacebookQMLiOSDelegate)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
@@ -34,9 +38,16 @@ static FacebookQMLiOS* m_instance{nullptr};
     return handled;
 }
 
+@end
+
+@interface FBShareDelegate : NSObject<FBSDKSharingDelegate>
+@end
+
+@implementation FBShareDelegate
+
 - (void)sharer:(id<FBSDKSharing>)sharer didCompleteWithResults:(NSDictionary *)results
 {
-    emit FacebookQMLiOSInstance::instance()->onShareSuccess();
+    emit FacebookQMLiOSInstance::instance()->shareSuccess();
 }
 
 - (void)sharer:(id<FBSDKSharing>)sharer didFailWithError:(NSError *)error
@@ -44,12 +55,12 @@ static FacebookQMLiOS* m_instance{nullptr};
     NSString *message = error.userInfo[FBSDKErrorLocalizedDescriptionKey] ?:
     @"There was a problem sharing, please try again later.";
 
-    emit FacebookQMLiOSInstance::instance()->onShareError(QString::fromNSString(message));
+    emit FacebookQMLiOSInstance::instance()->shareError(QString::fromNSString(message));
 }
 
 - (void)sharerDidCancel:(id<FBSDKSharing>)sharer
 {
-    emit FacebookQMLiOSInstance::instance()->onShareCancel();
+    emit FacebookQMLiOSInstance::instance()->shareCancel();
 }
 
 @end
@@ -76,27 +87,33 @@ void FacebookQMLiOS::login()
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
 
-    [login logInWithPublishPermissions:@[toNSArray(m_publishPermissions)]
+    QPlatformNativeInterface* nativeInterface = QGuiApplication::platformNativeInterface();
+    UIView *view = static_cast<UIView *>(nativeInterface->nativeResourceForWindow("uiview", qApp->topLevelWindows().at(0)));
+    UIViewController *qtController = [[view window] rootViewController];
+
+    [login logInWithReadPermissions:toNSArray(m_readPermissions)
+        fromViewController:qtController
         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (error) {
-            emit onLoginError(QString::fromNSString(error.localizedDescription));
+            emit loginError(QString::fromNSString(error.localizedDescription));
         } else if (result.isCancelled) {
-            emit onLoginCancel();
+            emit loginCancel();
         }
 
-        [login logInWithReadPermissions:@[toNSArray(m_readPermissions)]
-            handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-            if (error) {
-                emit onLoginError(QString::fromNSString(error.localizedDescription));
-            } else if (result.isCancelled) {
-                emit onLoginCancel();
-            }
+        emit loginSuccess();
+    }];
 
-            emit onLoginSuccess();
-        }];
-
+    [login logInWithPublishPermissions:toNSArray(m_publishPermissions)
+        fromViewController:qtController
+        handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            emit loginError(QString::fromNSString(error.localizedDescription));
+        } else if (result.isCancelled) {
+            emit loginCancel();
         }
-    ];
+
+        emit loginSuccess();
+    }];
 }
 
 void FacebookQMLiOS::logout()
@@ -120,7 +137,13 @@ void FacebookQMLiOS::share(const QString &title, const QString &text, const QStr
     content.contentTitle = title.toNSString();
     content.imageURL = [NSURL URLWithString:imageUrl.toNSString()];
     content.contentDescription = text.toNSString();
-    [FBSDKShareDialog showFromViewController:self withContent:content delegate:nil];
+
+    QPlatformNativeInterface* nativeInterface = QGuiApplication::platformNativeInterface();
+    UIView *view = static_cast<UIView *>(nativeInterface->nativeResourceForWindow("uiview", qApp->topLevelWindows().at(0)));
+    UIViewController *qtController = [[view window] rootViewController];
+
+    FBShareDelegate *shareDelegate = [[FBShareDelegate alloc] init];
+    [FBSDKShareDialog showFromViewController:qtController withContent:content delegate:shareDelegate];
 }
 
 QString FacebookQMLiOS::getProfileId()
@@ -141,7 +164,7 @@ QString FacebookQMLiOS::getProfileLinkUri()
 QString FacebookQMLiOS::getProfilePictureUri(int width, int height)
 {
     return QString::fromNSString([[FBSDKProfile currentProfile]
-            imageURLForPictureMode:size:CGMake(width, height)].absoluteString);
+            imageURLForPictureMode:FBSDKProfilePictureModeNormal size:CGSizeMake(width, height)].absoluteString);
 }
 
 FacebookQMLiOS *FacebookQMLiOSInstance::instance()

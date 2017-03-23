@@ -22,12 +22,12 @@ public:
     Q_INVOKABLE QString getProfilePictureUri(int width, int height);
 
 signals:
-    void onLoginSuccess();
-    void onLoginCancel();
-    void onLoginError(QString error);
-    void onShareSuccess();
-    void onShareCancel();
-    void onShareError(QString error);
+    void loginSuccess();
+    void loginCancel();
+    void loginError(QString error);
+    void shareSuccess();
+    void shareCancel();
+    void shareError(QString error);
 
 private:
     QStringList m_readPermissions;

@@ -39,12 +39,14 @@ android {
 }
 
 ios {
+    QT += gui-private
+    CONFIG -= bitcode
     QMAKE_INFO_PLIST = ios/Project-Info.plist
     OTHER_FILES += $$QMAKE_INFO_PLIST
     OBJECTIVE_SOURCES += ios/FacebookQMLiOS.mm
     HEADERS += ios/FacebookQMLiOS.h
     LIBS += -F$$PWD/ios/FBSDK -framework FBSDKCoreKit -framework FBSDKShareKit -framework Foundation
-    LIBS += -framework Bolts -framework FBSDKLoginKit -framework CoreGraphics
+    LIBS += -framework Bolts -framework FBSDKLoginKit -framework CoreGraphics -lz -framework UIKit
 }
 
 DISTFILES += \
