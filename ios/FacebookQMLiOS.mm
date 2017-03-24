@@ -74,7 +74,8 @@ NSArray *toNSArray(const QStringList &stringList)
     return array;
 }
 
-FacebookQMLiOS::FacebookQMLiOS(QObject *parent)
+FacebookQMLiOS::FacebookQMLiOS(QObject *parent) :
+    QObject(parent)
 {
     FacebookQMLiOSInstance::setInstance(this);
 }
@@ -103,7 +104,7 @@ void FacebookQMLiOS::login()
         emit loginSuccess();
     }];
 
-    [login logInWithPublishPermissions:toNSArray(m_publishPermissions)
+    /*[login logInWithPublishPermissions:toNSArray(m_publishPermissions)
         fromViewController:qtController
         handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
         if (error) {
@@ -113,7 +114,7 @@ void FacebookQMLiOS::login()
         }
 
         emit loginSuccess();
-    }];
+    }];*/
 }
 
 void FacebookQMLiOS::logout()
