@@ -19,6 +19,7 @@ Window {
         onLoginSuccess: {
             showUserInfo()
             shareButton.visible = true
+            loginButton.text = "Logout"
             console.log("Login successful")
         }
         onLoginError: {
@@ -40,7 +41,8 @@ Window {
 
     Button {
         id: shareButton
-        anchors.bottom: button.top
+        anchors.bottom: loginButton.top
+        anchors.horizontalCenter: parent.horizontalCenter
         text: "Share on Facebook"
         visible: false
 
@@ -52,27 +54,16 @@ Window {
     }
 
     Button {
-        id: button
+        id: loginButton
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        style: ButtonStyle {
-            background: Rectangle {
-                color: "#3b5998"
-            }
-            label: Text {
-                color: "white"
-                text: qsTr("Login with Facebook")
-            }
-            padding.bottom: 30
-            padding.top: 30
-            padding.left: 30
-            padding.right: 30
-        }
+        text: "Login with Facebook"
 
         onClicked: {
             if (facebook.isLoggedIn()) {
                 facebook.logout()
                 shareButton.visible = false
+                loginButton.text = "Login with Facebook"
             } else {
                 facebook.login()
             }
@@ -97,6 +88,7 @@ Window {
     Component.onCompleted: {
         if (facebook.isLoggedIn()) {
             shareButton.visible = true
+            loginButton.text = "Logout"
             showUserInfo()
         }
     }

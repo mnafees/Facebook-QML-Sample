@@ -11,6 +11,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.ProfileTracker;
 import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
@@ -27,6 +28,7 @@ public class FacebookQMLHelperActivity extends QtActivity {
 
     private CallbackManager mCallbackManager;
     private ShareDialog mShareDialog;
+    private ProfileTracker mProfileTracker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,12 +54,19 @@ public class FacebookQMLHelperActivity extends QtActivity {
                 FacebookQMLCallbacks.onShareError(error.getMessage());
             }
         });
+        mProfileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                if (isLoggedIn()) {
+                    FacebookQMLCallbacks.onLoginSuccess();
+                }
+            }
+        };
         LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 AccessToken.setCurrentAccessToken(loginResult.getAccessToken());
                 Profile.fetchProfileForCurrentAccessToken();
-                FacebookQMLCallbacks.onLoginSuccess();
             }
 
             @Override
@@ -71,6 +80,12 @@ public class FacebookQMLHelperActivity extends QtActivity {
             }
         });
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mProfileTracker.stopTracking();
     }
 
     public static void login(String[] readPermissions, String[] publishPermissions) {
