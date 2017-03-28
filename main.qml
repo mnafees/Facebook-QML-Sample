@@ -18,6 +18,7 @@ Window {
         // Callbacks
         onLoginSuccess: {
             showUserInfo()
+            shareButton.visible = true
             console.log("Login successful")
         }
         onLoginError: {
@@ -34,6 +35,19 @@ Window {
         }
         onShareCancel: {
             console.log("Share canceled")
+        }
+    }
+
+    Button {
+        id: shareButton
+        anchors.bottom: button.top
+        text: "Share on Facebook"
+        visible: false
+
+        onClicked: {
+            if (facebook.isLoggedIn()) {
+                facebook.share("Test", "Test", "https://github.com/mnafees", facebook.getProfilePictureUri(200, 200))
+            }
         }
     }
 
@@ -58,6 +72,7 @@ Window {
         onClicked: {
             if (facebook.isLoggedIn()) {
                 facebook.logout()
+                shareButton.visible = false
             } else {
                 facebook.login()
             }
@@ -81,6 +96,7 @@ Window {
 
     Component.onCompleted: {
         if (facebook.isLoggedIn()) {
+            shareButton.visible = true
             showUserInfo()
         }
     }

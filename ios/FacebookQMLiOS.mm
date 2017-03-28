@@ -22,6 +22,12 @@ static FacebookQMLiOS* m_instance{nullptr};
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     [[FBSDKApplicationDelegate sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                          selector:@selector(_updateContent:)
+                                          name:FBSDKProfileDidChangeNotification
+                                          object:nil];
 
     return YES;
 }
@@ -36,6 +42,18 @@ static FacebookQMLiOS* m_instance{nullptr};
     ];
 
     return handled;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)_updateContent:(NSNotification *)notification
+{
+    if ([FBSDKAccessToken currentAccessToken]) {
+        emit FacebookQMLiOSInstance::instance()->loginSuccess();
+    }
 }
 
 @end
@@ -100,8 +118,6 @@ void FacebookQMLiOS::login()
         } else if (result.isCancelled) {
             emit loginCancel();
         }
-
-        emit loginSuccess();
     }];
 
     /*[login logInWithPublishPermissions:toNSArray(m_publishPermissions)
