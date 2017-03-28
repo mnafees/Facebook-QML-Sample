@@ -75,7 +75,7 @@ public class FacebookQMLHelperActivity extends QtActivity {
 
     public static void login(String[] readPermissions, String[] publishPermissions) {
         LoginManager.getInstance().logInWithReadPermissions(mInstance, Arrays.asList(readPermissions));
-        LoginManager.getInstance().logInWithPublishPermissions(mInstance, Arrays.asList(publishPermissions));
+        //LoginManager.getInstance().logInWithPublishPermissions(mInstance, Arrays.asList(publishPermissions));
     }
 
     public static void logout() {
