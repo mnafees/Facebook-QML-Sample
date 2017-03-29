@@ -105,6 +105,7 @@ FacebookQMLiOS::~FacebookQMLiOS()
 void FacebookQMLiOS::login()
 {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    login.loginBehavior = FBSDKLoginBehaviorNative;
 
     QPlatformNativeInterface* nativeInterface = QGuiApplication::platformNativeInterface();
     UIView *view = static_cast<UIView *>(nativeInterface->nativeResourceForWindow("uiview", qApp->topLevelWindows().at(0)));
